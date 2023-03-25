@@ -1,0 +1,19 @@
+<table mat-table [dataSource]="pacientes" class="mat-elevation-z8">
+w
+  <!-- NameColumn -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Nome </th>
+    <td mat-cell *matCellDef="let paciente"> {{paciente.name}} </td>
+  </ng-container>
+
+  <!-- Gender Column -->
+  <ng-container matColumnDef="gender">
+    <th mat-header-cell *matHeaderCellDef> Sexo </th>
+    <td mat-cell *matCellDef="let paciente"> {{paciente.gender}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
