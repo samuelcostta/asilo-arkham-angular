@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Paciente } from '../model/paciente';
+import { PacientesService } from '../services/pacientes.service';
 
 @Component({
   selector: 'app-pacientes',
@@ -8,13 +9,13 @@ import { Paciente } from '../model/paciente';
 })
 export class PacientesComponent implements OnInit{
 
-  pacientes: Paciente[] = [
-    { _id: '1', name: 'Samuel lindao', gender: 'Masculino'}
-  ];
+  pacientes: Paciente[] = [];
   displayedColumns = ['name', 'gender'];
 
+  pacientesService: PacientesService;
   constructor() {
-    //this.pacientes = []
+    this.pacientesService = new PacientesService();
+    this.pacientes = this.pacientesService.list();
   }
 
   ngOnInit(): void {

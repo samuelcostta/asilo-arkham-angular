@@ -1,6 +1,7 @@
+import { AppMaterialModule } from './../shared/app-material/app-material.module';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MatTableModule } from '@angular/material/table';
+
 
 import { PacientesRoutingModule } from './pacientes-routing.module';
 import { PacientesComponent } from './pacientes/pacientes.component';
@@ -13,7 +14,7 @@ import { PacientesComponent } from './pacientes/pacientes.component';
   imports: [
     CommonModule,
     PacientesRoutingModule,
-    MatTableModule
+    AppMaterialModule
   ]
 })
 export class PacientesModule { }
