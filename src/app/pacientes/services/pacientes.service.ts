@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 import { Paciente } from '../model/paciente';
 
@@ -7,11 +8,11 @@ import { Paciente } from '../model/paciente';
 })
 export class PacientesService {
 
+  private readonly API = '/assets/pacientes.json';
+
   constructor(private httpClient : HttpClient) { }
 
-  list(): Paciente[] {
-    return[
-      { _id: '1', name: 'Samuel lindao', gender: 'Masculino'}
-    ];
+  list() {
+    return this.httpClient.get<Paciente[]>(this.API)
   }
 }
