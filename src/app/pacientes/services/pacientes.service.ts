@@ -19,7 +19,7 @@ export class PacientesService {
     return this.httpClient.get<Paciente[]>(this.API)
     .pipe(
       first(),
-      delay(60000),
+      delay(5000),
       tap(pacientes => console.log(pacientes))
     );
   }
