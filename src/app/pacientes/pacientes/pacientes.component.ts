@@ -10,14 +10,14 @@ import { Observable } from 'rxjs';
 })
 export class PacientesComponent implements OnInit{
 
-  pacientes: Observable<Paciente[]>;
+  pacientes$: Observable<Paciente[]>;
   displayedColumns = ['name', 'gender'];
 
   //pacientesService: PacientesService;
 
   constructor(private pacientesService: PacientesService) {
     //this.pacientesService = new PacientesService();
-    this.pacientes = this.pacientesService.list();
+    this.pacientes$ = this.pacientesService.list();
   }
 
   ngOnInit(): void {
