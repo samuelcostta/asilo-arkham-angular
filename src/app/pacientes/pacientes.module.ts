@@ -1,10 +1,11 @@
-import { AppMaterialModule } from './../shared/app-material/app-material.module';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-
+import { AppMaterialModule } from './../shared/app-material/app-material.module';
+import { SharedModule } from './../shared/shared.module';
 import { PacientesRoutingModule } from './pacientes-routing.module';
 import { PacientesComponent } from './pacientes/pacientes.component';
+
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { PacientesComponent } from './pacientes/pacientes.component';
   imports: [
     CommonModule,
     PacientesRoutingModule,
-    AppMaterialModule
+    AppMaterialModule,
+    SharedModule
   ]
 })
 export class PacientesModule { }
