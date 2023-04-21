@@ -10,7 +10,7 @@ export class GenderPipe implements PipeTransform {
       case 'Masculino':return 'man';
       case 'Feminino':return 'woman';
     }
-    return 'woman';
+    return 'person';
   }
 
 }
