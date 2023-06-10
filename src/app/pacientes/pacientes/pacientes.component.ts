@@ -5,6 +5,7 @@ import { catchError, Observable, of } from 'rxjs';
 
 import { Paciente } from '../model/paciente';
 import { PacientesService } from '../services/pacientes.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pacientes',
@@ -14,13 +15,14 @@ import { PacientesService } from '../services/pacientes.service';
 export class PacientesComponent implements OnInit{
 
   pacientes$: Observable<Paciente[]>;
-  displayedColumns = ['id_paciente', 'nome_paciente', 'cpf', 'data_cadastro', 'telefone', 'data_nascimento', 'endereco', 'email'];
+  displayedColumns = ['id_paciente', 'nome_paciente', 'cpf', 'data_cadastro', 'telefone', 'data_nascimento', 'endereco', 'email', 'actions'];
 
   //pacientesService: PacientesService;
 
   constructor(
     private pacientesService: PacientesService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private router: Router
     ) {
 
     //this.pacientesService = new PacientesService();
@@ -40,5 +42,10 @@ export class PacientesComponent implements OnInit{
   }
 
   ngOnInit(): void {
+  }
+
+  onAdd() {
+    console.log("Oi");
+    //this.router.navigate(['courses/new'])
   }
 }
