@@ -14,7 +14,7 @@ import { PacientesService } from '../services/pacientes.service';
 export class PacientesComponent implements OnInit{
 
   pacientes$: Observable<Paciente[]>;
-  displayedColumns = ['name', 'gender'];
+  displayedColumns = ['id_paciente', 'nome_paciente', 'cpf', 'data_cadastro', 'telefone', 'data_nascimento', 'endereco', 'email'];
 
   //pacientesService: PacientesService;
 
