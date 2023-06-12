@@ -45,7 +45,7 @@ export class PacientesComponent implements OnInit{
   }
 
   onAdd() {
-    console.log("Oi");
+    console.log('Oi');
     //this.router.navigate(['courses/new'])
   }
 }
