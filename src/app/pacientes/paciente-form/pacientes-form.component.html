@@ -1,1 +1,38 @@
-<p>pacientes-form works!</p>
+<mat-card>
+
+  <mat-toolbar color="primary">Adcionar paciente</mat-toolbar>
+
+  <mat-card-content>
+    <form [formGroup]="form">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Nome" formControlName="nome_paciente">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="CPF" formControlName="cpf">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input type="date" matInput placeholder="Data Nascimento" formControlName="data_nascimento">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Endereço" formControlName="endereco">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input type="tel" matInput placeholder="Telefone" formControlName="telefone">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input type="email" matInput placeholder="Email" formControlName="email">
+      </mat-form-field>
+
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="onSubmit()">SALVAR</button>
+    <button mat-raised-button (click)="onCancel()">CANCELAR</button>
+  </mat-card-actions>
+</mat-card>

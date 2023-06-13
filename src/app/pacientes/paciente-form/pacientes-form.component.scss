@@ -1,0 +1,23 @@
+mat-card{
+  max-width: 80%;
+  margin: 2em auto;
+  text-align: center;
+}
+
+mat-card-actions{
+  margin: auto
+}
+
+mat-form-field{
+  height: 70px;
+  margin-top: 10px;
+}
+
+.full-width{
+  width: 100%;
+}
+
+.min-width{
+  width: 100%;
+  min-width: 150px;
+}

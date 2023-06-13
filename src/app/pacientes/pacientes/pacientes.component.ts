@@ -5,7 +5,7 @@ import { catchError, Observable, of } from 'rxjs';
 
 import { Paciente } from '../model/paciente';
 import { PacientesService } from '../services/pacientes.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-pacientes',
@@ -22,7 +22,8 @@ export class PacientesComponent implements OnInit{
   constructor(
     private pacientesService: PacientesService,
     public dialog: MatDialog,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
     ) {
 
     //this.pacientesService = new PacientesService();
@@ -45,7 +46,7 @@ export class PacientesComponent implements OnInit{
   }
 
   onAdd() {
-    console.log('Oi');
-    //this.router.navigate(['courses/new'])
+    //console.log('Oi');
+    this.router.navigate(['new'],{relativeTo: this.route})
   }
 }

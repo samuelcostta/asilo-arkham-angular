@@ -6,6 +6,7 @@ import { SharedModule } from './../shared/shared.module';
 import { PacientesRoutingModule } from './pacientes-routing.module';
 import { PacientesComponent } from './pacientes/pacientes.component';
 import { PacientesFormComponent } from './paciente-form/pacientes-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -18,7 +19,9 @@ import { PacientesFormComponent } from './paciente-form/pacientes-form.component
     CommonModule,
     PacientesRoutingModule,
     AppMaterialModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule,
+
   ]
 })
 export class PacientesModule { }
