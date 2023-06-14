@@ -11,7 +11,7 @@ import { delay } from 'rxjs/operators'
 })
 export class PacientesService {
 
-  private readonly API = 'api/pacientes/all';
+  private readonly API = 'api/pacientes';
 
   constructor(private httpClient : HttpClient) { }
 
@@ -25,7 +25,7 @@ export class PacientesService {
   }
 
   save(record: Paciente){
-    //console.log(record)
+    console.log(record)
     return this.httpClient.post<Paciente>(this.API, record);
   }
 }
