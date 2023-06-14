@@ -30,7 +30,7 @@ export class PacientesComponent implements OnInit{
     this.pacientes$ = this.pacientesService.list()
     .pipe(
       catchError(error => {
-        this.onError('Erro ao carregar cursos.');
+        this.onError('Erro ao carregar pacientes.');
         return of([])
       })
     );
