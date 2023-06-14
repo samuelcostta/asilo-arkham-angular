@@ -24,7 +24,7 @@ export class PacientesService {
     );
   }
 
-  save(record: Paciente){
+  save(record: Partial<Paciente>){
     console.log(record)
     return this.httpClient.post<Paciente>(this.API, record);
   }

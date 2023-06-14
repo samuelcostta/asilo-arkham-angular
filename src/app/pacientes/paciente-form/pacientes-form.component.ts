@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, NonNullableFormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { PacientesService } from '../services/pacientes.service';
@@ -12,26 +12,28 @@ import { PacientesService } from '../services/pacientes.service';
 })
 export class PacientesFormComponent implements OnInit {
 
-  form: FormGroup;
+  dataString: string = '2023-05-24';
+  timestamp: number = Date.parse(this.dataString);
 
-  constructor(private formBuilder: FormBuilder,
+  form = this.formBuilder.group({
+    nome_paciente: [''],
+    cpf: [0],
+    data_nascimento: [null],
+    endereco: [''],
+    email: [''],
+    telefone: [0],
+    data_cadastro: [null]
+  });
+
+  constructor(private formBuilder: NonNullableFormBuilder,
     private service: PacientesService,
     private snackBar: MatSnackBar,
     private location: Location) {
-    this.form = this.formBuilder.group({
-      nome_paciente: [null],
-      cpf: [null],
-      data_nascimento: [null],
-      endereco: [null],
-      email: [null],
-      telefone: [null],
-      data_cadastro: [null]
-
-    });
+    //this.form
   }
 
   ngOnInit(): void {
-
+    //this.form.value.nome_paciente = 'Samuel';
   }
 
   onSubmit(){
