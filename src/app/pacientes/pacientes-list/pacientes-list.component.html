@@ -1,0 +1,75 @@
+<mat-table [dataSource]="pacientes">
+
+      <!-- Id Column -->
+      <ng-container matColumnDef="id_paciente">
+        <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
+        <mat-cell *matCellDef="let paciente">{{ paciente.id_paciente }}</mat-cell>
+      </ng-container>
+
+      <!-- Nome Column -->
+      <ng-container matColumnDef="nome_paciente">
+        <mat-header-cell *matHeaderCellDef>Nome</mat-header-cell>
+        <mat-cell *matCellDef="let paciente">{{ paciente.nome_paciente }}
+          <!--<mat-icon aria-hidden="false" aria-label="Genero do paciente">{{ paciente.gender }}</mat-icon> -->
+        </mat-cell>
+      </ng-container>
+
+      <!-- CPF Column -->
+      <ng-container matColumnDef="cpf">
+        <mat-header-cell *matHeaderCellDef>CPF</mat-header-cell>
+        <mat-cell *matCellDef="let paciente">{{ paciente.cpf }}</mat-cell>
+      </ng-container>
+
+      <!-- DataCadastro Column -->
+      <ng-container matColumnDef="data_cadastro">
+        <mat-header-cell *matHeaderCellDef>Data Cadastro</mat-header-cell>
+        <mat-cell *matCellDef="let paciente">{{ paciente.data_cadastro }}</mat-cell>
+      </ng-container>
+
+      <!-- Telefone Column -->
+      <ng-container matColumnDef="telefone">
+        <mat-header-cell *matHeaderCellDef>Telefone</mat-header-cell>
+        <mat-cell *matCellDef="let paciente">{{ paciente.telefone }}</mat-cell>
+      </ng-container>
+
+      <!-- DataNascimento Column -->
+      <ng-container matColumnDef="data_nascimento">
+        <mat-header-cell *matHeaderCellDef>Data Nascimento</mat-header-cell>
+        <mat-cell *matCellDef="let paciente">{{ paciente.data_nascimento }}</mat-cell>
+      </ng-container>
+
+      <!-- Endereco Column -->
+      <ng-container matColumnDef="endereco">
+        <mat-header-cell *matHeaderCellDef>Endereco</mat-header-cell>
+        <mat-cell *matCellDef="let paciente">{{ paciente.endereco }}</mat-cell>
+      </ng-container>
+
+      <!-- Email Column -->
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+        <mat-cell *matCellDef="let paciente">{{ paciente.email }}</mat-cell>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef class="action-column-header">
+          <button mat-mini-fab color="accent" aria-label="Adcionar um paciente" (click)="onAdd()" >
+            <mat-icon >add</mat-icon>
+          </button>
+        </mat-header-cell>
+
+        <mat-cell *matCellDef="let paciente" class="action-column">
+          <button mat-icon-button color="primary" aria-label="Editar paciente">
+            <mat-icon>edit</mat-icon>
+          </button>
+
+          <button mat-icon-button color="warn" aria-label="Remover paciente">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-cell>
+
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>

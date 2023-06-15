@@ -7,13 +7,15 @@ import { PacientesRoutingModule } from './pacientes-routing.module';
 import { PacientesComponent } from './pacientes/pacientes.component';
 import { PacientesFormComponent } from './paciente-form/pacientes-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PacientesListComponent } from './pacientes-list/pacientes-list.component';
 
 
 
 @NgModule({
   declarations: [
     PacientesComponent,
-    PacientesFormComponent
+    PacientesFormComponent,
+    PacientesListComponent
   ],
   imports: [
     CommonModule,

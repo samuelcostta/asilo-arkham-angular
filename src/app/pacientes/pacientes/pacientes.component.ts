@@ -15,7 +15,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PacientesComponent implements OnInit{
 
   pacientes$: Observable<Paciente[]>;
-  displayedColumns = ['id_paciente', 'nome_paciente', 'cpf', 'data_cadastro', 'telefone', 'data_nascimento', 'endereco', 'email', 'actions'];
 
   //pacientesService: PacientesService;
 
