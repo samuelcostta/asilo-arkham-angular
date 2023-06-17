@@ -4,10 +4,10 @@ import { NgModule } from '@angular/core';
 import { AppMaterialModule } from './../shared/app-material/app-material.module';
 import { SharedModule } from './../shared/shared.module';
 import { PacientesRoutingModule } from './pacientes-routing.module';
-import { PacientesComponent } from './pacientes/pacientes.component';
-import { PacientesFormComponent } from './paciente-form/pacientes-form.component';
+import { PacientesComponent } from './containers/pacientes/pacientes.component';
+import { PacientesFormComponent } from './containers/paciente-form/pacientes-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { PacientesListComponent } from './pacientes-list/pacientes-list.component';
+import { PacientesListComponent } from './components/pacientes-list/pacientes-list.component';
 
 
 

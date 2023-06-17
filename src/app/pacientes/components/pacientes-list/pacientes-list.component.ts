@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { Paciente } from '../model/paciente';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+
+import { Paciente } from '../../model/paciente';
 
 @Component({
   selector: 'app-pacientes-list',
@@ -10,13 +10,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PacientesListComponent {
 
   @Input() pacientes: Paciente[] = [];
+  @Output() add = new EventEmitter(false);
+  @Output() edit = new EventEmitter(false);
+  @Output() remove = new EventEmitter(false);
+
 
   readonly displayedColumns = ['id_paciente', 'nome_paciente', 'cpf', 'data_cadastro', 'telefone', 'data_nascimento', 'endereco', 'email', 'actions'];
 
-  constructor(
-    private router: Router,
-    private route: ActivatedRoute
-    ) { }
+  constructor() { }
 
     ngOnInit(): void {
 
@@ -24,8 +25,14 @@ export class PacientesListComponent {
 
     onAdd() {
       //console.log('Oi');
-      this.router.navigate(['new'],{relativeTo: this.route})
+      this.add.emit(true);
     }
 
+    onEdit(paciente: Paciente) {
+      this.edit.emit(paciente);
+    }
 
+    onDelete(paciente: Paciente) {
+      this.remove.emit(paciente);
+    }
 }

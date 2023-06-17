@@ -1,9 +1,11 @@
+import { Paciente } from './../../model/paciente';
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, NonNullableFormBuilder } from '@angular/forms';
+import { NonNullableFormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
 
-import { PacientesService } from '../services/pacientes.service';
+import { PacientesService } from '../../services/pacientes.service';
 
 @Component({
   selector: 'app-pacientes-form',
@@ -16,6 +18,7 @@ export class PacientesFormComponent implements OnInit {
   timestamp: number = Date.parse(this.dataString);
 
   form = this.formBuilder.group({
+    id_paciente: [0],
     nome_paciente: [''],
     cpf: [0],
     data_nascimento: [null],
@@ -28,12 +31,23 @@ export class PacientesFormComponent implements OnInit {
   constructor(private formBuilder: NonNullableFormBuilder,
     private service: PacientesService,
     private snackBar: MatSnackBar,
-    private location: Location) {
+    private location: Location,
+    private route: ActivatedRoute) {
     //this.form
   }
 
   ngOnInit(): void {
-    //this.form.value.nome_paciente = 'Samuel';
+    const paciente: Paciente = this.route.snapshot.data['paciente'];
+    this.form.setValue({
+      nome_paciente: paciente.nome_paciente,
+      cpf: paciente.cpf,
+      data_nascimento: paciente.data_nascimento,
+      endereco: paciente.endereco,
+      email: paciente.email,
+      telefone: paciente.telefone,
+      data_cadastro: paciente.data_cadastro,
+      id_paciente: paciente.id_paciente
+    })
   }
 
   onSubmit(){

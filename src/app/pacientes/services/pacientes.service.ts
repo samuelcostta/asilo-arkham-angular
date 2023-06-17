@@ -19,13 +19,34 @@ export class PacientesService {
     return this.httpClient.get<Paciente[]>(this.API)
     .pipe(
       first(),
-      delay(5000),
+      //delay(5000),
       tap(pacientes => console.log(pacientes))
     );
   }
 
+  loadById(id_paciente: Number ){
+    return this.httpClient.get<Paciente>(`${this.API}/${id_paciente}`);
+  }
+
   save(record: Partial<Paciente>){
-    console.log(record)
+    //console.log(record);
+    if(record.id_paciente){
+      //console.log('update');
+      return this.update(record);
+    }
+    //console.log('create')
+    return this.create(record);
+  }
+
+  private create(record: Partial<Paciente>) {
     return this.httpClient.post<Paciente>(this.API, record);
+  }
+
+  private update(record: Partial<Paciente>) {
+    return this.httpClient.put<Paciente>(`${this.API}/${record.id_paciente}`, record);
+  }
+
+  remove(id_paciente: number){
+    return this.httpClient.delete(`${this.API}/${id_paciente}`);
   }
 }
