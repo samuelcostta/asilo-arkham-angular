@@ -20,7 +20,6 @@ export class PacientesListComponent {
   constructor() { }
 
     ngOnInit(): void {
-
     }
 
     onAdd() {

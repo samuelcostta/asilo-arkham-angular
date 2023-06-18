@@ -3,11 +3,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { catchError, Observable, of } from 'rxjs';
+import { ConfirmationDialogComponent } from 'src/app/shared/components/confirmation-dialog/confirmation-dialog.component';
 
 import { ErrorDialogComponent } from '../../../shared/components/error-dialog/error-dialog.component';
 import { Paciente } from '../../model/paciente';
 import { PacientesService } from '../../services/pacientes.service';
-import { ConfirmationDialogComponent } from 'src/app/shared/components/confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-pacientes',
@@ -28,7 +28,6 @@ export class PacientesComponent implements OnInit{
     private snackBar: MatSnackBar
     ) {
 
-    //this.pacientesService = new PacientesService();
     this.refresh();
   }
 
