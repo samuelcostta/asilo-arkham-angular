@@ -7,6 +7,7 @@ import { catchError, Observable, of } from 'rxjs';
 import { ErrorDialogComponent } from '../../../shared/components/error-dialog/error-dialog.component';
 import { Paciente } from '../../model/paciente';
 import { PacientesService } from '../../services/pacientes.service';
+import { ConfirmationDialogComponent } from 'src/app/shared/components/confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-pacientes',
@@ -60,16 +61,24 @@ export class PacientesComponent implements OnInit{
   }
 
   onRemove(paciente: Paciente){
-    this.pacientesService.remove(paciente.id_paciente).subscribe(
-      ()=> {
-        this.refresh
-        this.snackBar.open('Paciente removido com sucesso', 'X', {
-          duration: 5000,
-          verticalPosition: 'top',
-          horizontalPosition: 'center'
-        });
-      },
-      () => this.onError('Erro ao tentar remover curso.')
-    );
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      data: 'Tem certeza que deseja remover este curso?',
+    });
+
+    dialogRef.afterClosed().subscribe((result: boolean) => {
+      if(result){
+        this.pacientesService.remove(paciente.id_paciente).subscribe(
+          ()=> {
+            this.refresh
+            this.snackBar.open('Paciente removido com sucesso', 'X', {
+              duration: 5000,
+              verticalPosition: 'top',
+              horizontalPosition: 'center'
+            });
+          },
+          () => this.onError('Erro ao tentar remover curso.')
+        );
+      }
+    });
   }
 }

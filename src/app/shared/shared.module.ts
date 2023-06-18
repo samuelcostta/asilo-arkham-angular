@@ -4,13 +4,15 @@ import { NgModule } from '@angular/core';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
 import { GenderPipe } from './pipes/gender.pipe';
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 
 
 
 @NgModule({
   declarations: [
     ErrorDialogComponent,
-    GenderPipe
+    GenderPipe,
+    ConfirmationDialogComponent
   ],
   imports: [
     CommonModule,
@@ -18,6 +20,7 @@ import { GenderPipe } from './pipes/gender.pipe';
   ],
   exports: [
     ErrorDialogComponent,
+    ConfirmationDialogComponent,
     GenderPipe
   ]
 })
