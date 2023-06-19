@@ -25,7 +25,6 @@ export class PacientesComponent implements OnInit{
     private route: ActivatedRoute,
     private snackBar: MatSnackBar
     ) {
-
     this.refresh();
   }
 
@@ -66,7 +65,7 @@ export class PacientesComponent implements OnInit{
       if(result){
         this.pacientesService.remove(paciente.id_paciente).subscribe(
           ()=> {
-            this.refresh
+            this.refresh()
             this.snackBar.open('Paciente removido com sucesso', 'X', {
               duration: 5000,
               verticalPosition: 'top',

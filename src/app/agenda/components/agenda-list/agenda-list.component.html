@@ -1,13 +1,15 @@
 <mat-card  class="card-list" *ngFor="let Agenda of agendas">
   <mat-card-header>
     <mat-card-title-group>
-      <mat-card-title>{{ Agenda.responsavel }}</mat-card-title>
-      <mat-card-subtitle>{{Agenda.nome_paciente}}</mat-card-subtitle>
-      <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+      <mat-card-title class="content">{{Agenda.nome_paciente}}</mat-card-title>
+      <mat-card-subtitle class="content">{{Agenda.responsavel}}</mat-card-subtitle>
     </mat-card-title-group>
   </mat-card-header>
-  <mat-card-content>
-    {{Agenda.tarefa}}
+  <mat-card-content class="content">
+    <br>
+    <label>Data: </label> <label>{{Agenda.dia}}/{{Agenda.mes}}/{{Agenda.ano}}</label> <br><br>
+    <b><label>Tarefa:</label></b>
+    <p>{{Agenda.tarefa}}</p>
   </mat-card-content>
   <mat-card-actions>
     <button mat-button>CONCLUIDO</button>
