@@ -13,7 +13,10 @@
   <div class="registro">
     <app-agenda-list
       *ngIf="agendas$ | async as agendas; else loading"
-      [agendas]="agendas">
+      [agendas]="agendas"
+      (add)="onAdd()"
+      (edit)="onEdit($event)"
+      (remove)="onRemove($event)">
     </app-agenda-list>
   </div>
   <ng-template #loading>

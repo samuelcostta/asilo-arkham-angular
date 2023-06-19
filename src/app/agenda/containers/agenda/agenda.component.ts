@@ -7,6 +7,7 @@ import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/err
 
 import { Agenda } from '../../model/agenda';
 import { AgendaService } from '../../service/agenda.service';
+import { ConfirmationDialogComponent } from 'src/app/shared/components/confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-agenda',
@@ -55,5 +56,31 @@ export class AgendaComponent implements OnInit {
 
   onAdd() {
     this.router.navigate(['new'],{relativeTo: this.route});
+  }
+
+  onEdit(agenda: Agenda){
+    this.router.navigate(['edit', agenda.agenda_id],{relativeTo: this.route})
+  }
+
+  onRemove(agenda: Agenda){
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      data: 'Tem certeza que deseja remover este curso?',
+    });
+
+    dialogRef.afterClosed().subscribe((result: boolean) => {
+      if(result){
+        this.agendaService.remove(agenda.agenda_id).subscribe(
+          ()=> {
+            this.snackBar.open('Paciente removido com sucesso', 'X', {
+              duration: 5000,
+              verticalPosition: 'top',
+              horizontalPosition: 'center'
+            });
+            this.refresh()
+          },
+          () => this.onError('Erro ao tentar remover curso.')
+        );
+      }
+    });
   }
 }

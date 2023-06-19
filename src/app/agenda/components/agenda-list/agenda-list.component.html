@@ -11,7 +11,7 @@
   </mat-card-content>
   <mat-card-actions>
     <button mat-button>CONCLUIDO</button>
-    <button mat-button>ALTERAR</button>
-    <button mat-button>EXCLUIR</button>
+    <button mat-button (click)="onEdit(Agenda)">ALTERAR</button>
+    <button mat-button (click)="onDelete(Agenda)">EXCLUIR</button>
   </mat-card-actions>
 </mat-card>

@@ -18,8 +18,6 @@ export class PacientesComponent implements OnInit{
 
   pacientes$: Observable<Paciente[]> | null = null;
 
-  //pacientesService: PacientesService;
-
   constructor(
     private pacientesService: PacientesService,
     public dialog: MatDialog,

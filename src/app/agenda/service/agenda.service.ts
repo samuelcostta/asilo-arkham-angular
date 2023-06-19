@@ -23,12 +23,10 @@ export class AgendaService {
   }
 
   save(record: Partial<Agenda>){
-    //console.log(record);
+
     if(record.agenda_id){
-      //console.log('update');
       return this.update(record);
     }
-    //console.log('create')
     return this.create(record);
   }
 
@@ -42,5 +40,9 @@ export class AgendaService {
 
   remove(agenda_id: number){
     return this.httpClient.delete(`${this.API}/${agenda_id}`);
+  }
+
+  loadById(agenda_id: number ){
+    return this.httpClient.get<Agenda>(`${this.API}/${agenda_id}`);
   }
 }
