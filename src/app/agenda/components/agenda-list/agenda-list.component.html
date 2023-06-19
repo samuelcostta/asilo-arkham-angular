@@ -1,9 +1,8 @@
-<p>agenda-list works!</p>
 <mat-card  class="card-list" *ngFor="let Agenda of agendas">
   <mat-card-header>
     <mat-card-title-group>
       <mat-card-title>{{ Agenda.responsavel }}</mat-card-title>
-      <mat-card-subtitle>Small</mat-card-subtitle>
+      <mat-card-subtitle>{{Agenda.nome_paciente}}</mat-card-subtitle>
       <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
     </mat-card-title-group>
   </mat-card-header>
@@ -11,7 +10,8 @@
     {{Agenda.tarefa}}
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
+    <button mat-button>CONCLUIDO</button>
+    <button mat-button>ALTERAR</button>
+    <button mat-button>EXCLUIR</button>
   </mat-card-actions>
 </mat-card>

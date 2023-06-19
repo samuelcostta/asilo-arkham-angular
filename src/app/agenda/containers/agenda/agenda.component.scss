@@ -1,13 +1,18 @@
+.butao{
+  flex: 0 0 2830px;
+}
+
+app-agenda-list {
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 mat-card {
   max-width: 90%;
   margin: 2em auto;
   text-align: center;
-}
-
-.column-flex {
-  display: flex;
-  flex-direction: column;
-  min-width: 300px;
 }
 
 .loading-spinner {

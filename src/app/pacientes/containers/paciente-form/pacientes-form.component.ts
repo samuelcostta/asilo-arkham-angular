@@ -14,9 +14,6 @@ import { PacientesService } from '../../services/pacientes.service';
 })
 export class PacientesFormComponent implements OnInit {
 
-  dataString: string = '2023-05-24';
-  timestamp: number = Date.parse(this.dataString);
-
   form = this.formBuilder.group({
     id_paciente: [0],
     nome_paciente: [''],

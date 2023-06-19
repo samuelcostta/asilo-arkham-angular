@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
-import { catchError, Observable, of } from 'rxjs';
+import { Observable, catchError, of } from 'rxjs';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
 
-import { Agenda } from '../model/agenda';
-import { AgendaService } from './../service/agenda.service';
+import { Agenda } from '../../model/agenda';
+import { AgendaService } from '../../service/agenda.service';
 
 @Component({
   selector: 'app-agenda',
@@ -51,5 +51,9 @@ export class AgendaComponent implements OnInit {
     this.dialog.open(ErrorDialogComponent, {
       data: errorMsg
     });
+  }
+
+  onAdd() {
+    this.router.navigate(['new'],{relativeTo: this.route});
   }
 }

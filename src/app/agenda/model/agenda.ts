@@ -6,4 +6,5 @@ export interface Agenda{
   mes: number;
   ano: number;
   tarefa: string;
+  nome_paciente: string;
 }
