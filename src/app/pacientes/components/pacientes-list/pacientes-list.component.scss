@@ -4,9 +4,16 @@
 }
 
 .action-column {
-  flex: 0 0 150px
+  flex: 0 0 150px;
 }
 
 .action-column-header{
-  flex: 0 0 130px
+  flex: 0 0 130px;
+}
+
+.mat-column-id_paciente{
+  width: 5px;
+  //border-right: 1px solid currentColor;
+  //padding-right: 14px;
+  text-align: center;
 }

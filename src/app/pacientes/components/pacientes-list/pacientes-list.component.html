@@ -1,4 +1,4 @@
-<mat-table [dataSource]="pacientes">
+<mat-table [dataSource]="pacientes" class="mat-elevation-z8 pacientes-table">
 
       <!-- Id Column -->
       <ng-container matColumnDef="id_paciente">
@@ -7,11 +7,9 @@
       </ng-container>
 
       <!-- Nome Column -->
-      <ng-container matColumnDef="nome_paciente">
+      <ng-container matColumnDef="nome_paciente" >
         <mat-header-cell *matHeaderCellDef>Nome</mat-header-cell>
-        <mat-cell *matCellDef="let paciente">{{ paciente.nome_paciente }}
-          <!--<mat-icon aria-hidden="false" aria-label="Genero do paciente">{{ paciente.gender }}</mat-icon> -->
-        </mat-cell>
+        <mat-cell *matCellDef="let paciente">{{ paciente.nome_paciente }}</mat-cell>
       </ng-container>
 
       <!-- CPF Column -->
