@@ -1,0 +1,34 @@
+<mat-card>
+
+  <mat-toolbar color="primary">Cadastrar Funcionário</mat-toolbar>
+
+  <mat-card-content>
+    <form [formGroup]="form" class="min-width">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Nome" formControlName="nome_funcionario">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="CPF" formControlName="cpf">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input type="date" matInput placeholder="Data nascimento" formControlName="data_nascimento">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input  matInput placeholder="Endereco" formControlName="endereco">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Telefone" formControlName="telefone">
+      </mat-form-field>
+
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="onSubmit()">SALVAR</button>
+    <button mat-raised-button (click)="onCancel()">CANCELAR</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Agenda } from 'src/app/agenda/model/agenda';
-import { Funcionario } from '../model/funcionario';
+import { Funcionario } from '../../model/funcionario';
 
 @Component({
   selector: 'app-funcionarios-list',

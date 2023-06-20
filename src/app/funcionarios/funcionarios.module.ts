@@ -5,9 +5,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppMaterialModule } from './../shared/app-material/app-material.module';
 
 import { FuncionariosRoutingModule } from './funcionarios-routing.module';
-import { FuncionariosComponent } from './funcionarios/funcionarios.component';
-import { FuncionariosFormComponent } from './funcionarios-form/funcionarios-form.component';
-import { FuncionariosListComponent } from './funcionarios-list/funcionarios-list.component';
+import { FuncionariosComponent } from './containers/funcionarios/funcionarios.component';
+import { FuncionariosFormComponent } from './containers/funcionarios-form/funcionarios-form.component';
+import { FuncionariosListComponent } from './components/funcionarios-list/funcionarios-list.component';
 
 
 @NgModule({

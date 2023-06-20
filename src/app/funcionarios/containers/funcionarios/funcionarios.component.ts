@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { Observable, catchError, of } from 'rxjs';
-import { Funcionario } from '../model/funcionario';
-import { FuncionarioService } from '../service/funcionario.service';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable, catchError, of } from 'rxjs';
 import { ConfirmationDialogComponent } from 'src/app/shared/components/confirmation-dialog/confirmation-dialog.component';
+import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
+import { Funcionario } from '../../model/funcionario';
+import { FuncionarioService } from '../../service/funcionario.service';
 
 @Component({
   selector: 'app-funcionarios',
@@ -63,7 +63,7 @@ export class FuncionariosComponent {
 
   onRemove(funcionario: Funcionario){
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
-      data: 'Tem certeza que deseja remover este curso?',
+      data: 'Tem certeza que deseja remover este funcionário?',
     });
 
     dialogRef.afterClosed().subscribe((result: boolean) => {
@@ -77,7 +77,7 @@ export class FuncionariosComponent {
             });
             this.refresh()
           },
-          () => this.onError('Erro ao tentar remover funcionario.')
+          () => this.onError('Erro ao tentar remover funcionário.')
         );
       }
     });

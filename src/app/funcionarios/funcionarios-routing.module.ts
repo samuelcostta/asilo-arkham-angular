@@ -1,7 +1,7 @@
-import { FuncionariosFormComponent } from './funcionarios-form/funcionarios-form.component';
+import { FuncionariosFormComponent } from './containers/funcionarios-form/funcionarios-form.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FuncionariosComponent } from './funcionarios/funcionarios.component';
+import { FuncionariosComponent } from './containers/funcionarios/funcionarios.component';
 import { FuncionarioResolver } from './guards/funcionario.resolver';
 
 const routes: Routes = [
