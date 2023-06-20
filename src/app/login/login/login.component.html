@@ -1,26 +1,32 @@
-<div class="login">
-  <mat-card  class="card-list">
-    <mat-card-header>
-      <mat-card-title-group>
-        <mat-card-title class="content">Bem vindo!</mat-card-title>
-        <mat-card-subtitle class="content">Insira seus dados</mat-card-subtitle>
-      </mat-card-title-group>
-    </mat-card-header>
-    <mat-card-content class="content">
+<div class="grid">
+  <div class="flex justify-content-center align-content-center text-align-center">
+    <div class="login">
+      <mat-card  class="card-list">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title class="content">Bem vindo!</mat-card-title>
+            <mat-card-subtitle class="content">Insira seus dados</mat-card-subtitle>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content class="content">
 
-      <form [formGroup]="form" class="min-width">
-        <mat-form-field class="full-width">
-          <input matInput placeholder="Usuario" formControlName="user">
-        </mat-form-field>
+          <form [formGroup]="form" class="min-width">
+            <mat-form-field class="full-width">
+              <input [(ngModel)]="username" matInput placeholder="Usuario" formControlName="user">
+            </mat-form-field>
 
-        <mat-form-field class="full-width">
-          <input matInput placeholder="Senha" formControlName="password">
-        </mat-form-field>
-      </form>
+            <mat-form-field class="full-width">
+              <input [(ngModel)]="password" matInput placeholder="Senha" formControlName="password">
+            </mat-form-field>
+          </form>
 
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-flat-button (click)="onEntrar()" color="primary">Basic</button>
-    </mat-card-actions>
-  </mat-card>
+        </mat-card-content>
+        <mat-card-actions>
+          <button  mat-flat-button (click)="onEntrar()" color="primary">Entrar</button>
+        </mat-card-actions>
+        <p class="error-message">{{ error }}</p>
+
+      </mat-card>
+    </div>
+ </div>
 </div>
