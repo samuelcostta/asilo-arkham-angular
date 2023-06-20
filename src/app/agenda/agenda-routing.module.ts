@@ -1,8 +1,7 @@
-import { Agenda } from './model/agenda';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AgendaComponent } from './containers/agenda/agenda.component';
-import { AgendaListComponent } from './components/agenda-list/agenda-list.component';
+
 import { AgendaFormComponent } from './containers/agenda-form/agenda-form.component';
 import { AgendaResolver } from './guards/agenda.resolver';
 
