@@ -17,11 +17,11 @@ export class PacientesFormComponent implements OnInit {
   form = this.formBuilder.group({
     id_paciente: [0],
     nome_paciente: [''],
-    cpf: [0],
+    cpf: [''],
     data_nascimento: [null],
     endereco: [''],
     email: [''],
-    telefone: [0],
+    telefone: [''],
     data_cadastro: [null]
   });
 

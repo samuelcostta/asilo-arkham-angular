@@ -1,4 +1,3 @@
-import { AgendaModule } from './agenda/agenda.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -20,7 +19,12 @@ const routes: Routes = [
   {
     path: 'agenda',
     loadChildren: () => import('./agenda/agenda.module').then(m => m.AgendaModule)
+  },
+  {
+    path: 'funcionarios',
+    loadChildren: () => import('./funcionarios/funcionarios.module').then(m => m.FuncionariosModule)
   }
+
 ];
 
 @NgModule({

@@ -17,6 +17,6 @@ export class PacienteResolver implements Resolve<Paciente> {
     if (route.params && route.params['id_paciente']) {
       return this.service.loadById(route.params['id_paciente']);
     }
-    return of({ id_paciente: 0, nome_paciente: '', endereco: '', email: '', telefone: 0, cpf: 0, data_nascimento: null, data_cadastro: null });
+    return of({ id_paciente: 0, nome_paciente: '', endereco: '', email: '', telefone: '', cpf: '', data_nascimento: null, data_cadastro: null });
   }
 }

@@ -3,8 +3,8 @@ export interface Paciente {
   nome_paciente: string;
   endereco: string;
   data_nascimento: null;
-  telefone: number;
+  telefone: string;
   email: string;
-  cpf: number;
+  cpf: string;
   data_cadastro: null;
 }
